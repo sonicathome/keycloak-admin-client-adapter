@@ -1,0 +1,29 @@
+{
+  "extends": ["config:base"],
+  "automerge": false,
+  "dependencyDashboard": true,
+  "lockFileMaintenance": {
+    "automerge": true,
+    "enabled": true
+  },
+  "packageRules": [
+    {
+      "automerge": true,
+      "groupName": "all non-major dependencies",
+      "groupSlug": "all-minor-patch",
+      "matchPackagePatterns": ["*"],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ]
+    },
+    {
+      "matchPackagePatterns": ["org.jetbrains.kotlin"],
+      "allowedVersions": "<1.7.0"
+    }
+  ],
+  "separateMajorMinor": true,
+  "vulnerabilityAlerts": {
+    "labels": ["security"]
+  }
+}
